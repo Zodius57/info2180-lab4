@@ -86,12 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$found) {
         echo "<p>Superhero not found.</p>";
     }
-} else {
-    echo "<ul>";
-    foreach ($superheroes as $superhero) {
-        echo "<li>{$superhero['alias']}</li>";
-    }
-    echo "</ul>";
+
+    
 }
 
 
