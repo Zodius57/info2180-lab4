@@ -66,25 +66,25 @@ $superheroes = [
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = strtolower(trim($_POST['query']));
     $found = false;
-    if (!isset($_POST['name']) or empty($_POST['name'])){
+    if (!isset($_POST['query']) or empty($_POST['query'])){
         echo "<ul>";
         foreach ($superheroes as $superhero) {
             echo "<li>{$superhero['alias']}</li>";
         }
         echo "</ul>";
-    }
-
-    foreach ($superheroes as $superhero) {
-        if (strtolower($superhero['name']) === $query || strtolower($superhero['alias']) === $query) {
-            $found = true;
-            echo "<h3>{$superhero['alias']} ({$superhero['name']})</h3>";
-            echo "<p>{$superhero['biography']}</p>";
-            break;
+    }else{
+        foreach ($superheroes as $superhero) {
+            if (strtolower($superhero['name']) === $query || strtolower($superhero['alias']) === $query) {
+                $found = true;
+                echo "<h3>{$superhero['alias']} ({$superhero['name']})</h3>";
+                echo "<p>{$superhero['biography']}</p>";
+                break;
+            }
         }
-    }
 
-    if (!$found) {
-        echo "<p>Superhero not found.</p>";
+        if (!$found) {
+            echo "<p>Superhero not found.</p>";
+        }
     }
 
     
