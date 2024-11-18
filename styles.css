@@ -1,11 +1,27 @@
 body{
-    background-color: grey;
+    background-color: lightgrey;
 }
 
-h1{
-    font-size: 40px;
+header {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #63B3ED;
+    color: #FFFFFF;
+}
+
+#name{
+    width: 40%;
+}
+
+header h1{
+    font-size: 50px;
+    color: white;
 }
 
 .search{
     background-color: grey;
 }
+
